@@ -1,9 +1,0 @@
-../Core/Src/lcd.c:17:13:delay	24	static
-../Core/Src/lcd.c:23:12:isbusy	8	static
-../Core/Src/lcd.c:28:13:set_gpio	24	static
-../Core/Src/lcd.c:32:13:set_lcd_data	24	static
-../Core/Src/lcd.c:42:13:write_lcd_byte	64	static
-../Core/Src/lcd.c:62:6:lcd_write_string	64	static
-../Core/Src/lcd.c:69:6:lcd_clear	56	static
-../Core/Src/lcd.c:74:6:lcd_set_cursor	72	static
-../Core/Src/lcd.c:80:6:lcd_init	56	static
