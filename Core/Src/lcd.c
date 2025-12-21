@@ -78,25 +78,20 @@ void lcd_set_cursor(int x, int y) {
 }
 
 void lcd_init() {
+	// enable GPIO peripheral clocks
 	RCC->AHBENR |= RCC_AHBENR_GPIOAEN | RCC_AHBENR_GPIOBEN | RCC_AHBENR_GPIOFEN;
 
 	delay(15000);
 	set_gpio(RS, 0);
 
-	set_lcd_data(D4, D5, D6, D7, 3);
-	delay(5000);
-
-	set_gpio(E, 1);
-	delay(5000);
-	set_gpio(E, 0);
-	delay(5000);
-	set_gpio(E, 1);
-	delay(5000);
-	set_gpio(E, 0);
-	delay(5000);
-	set_gpio(E, 1);
-	delay(5000);
-	set_gpio(E, 0);
+	for (int i = 0; i < 3; i++) {
+		set_lcd_data(D4, D5, D6, D7, 3);
+		delay(100);
+		set_gpio(E, 1);
+		delay(100);
+		set_gpio(E, 0);
+		delay(i == 0 ? 5000 : 200);
+	}
 
 	set_lcd_data(D4, D5, D6, D7, 2);
 	delay(5000);
